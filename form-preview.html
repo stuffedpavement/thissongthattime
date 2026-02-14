@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Story Form Preview</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f8f9fa; }
+        .card { background: white; border-radius: 8px; padding: 24px; margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .section-title { color: #1f2937; font-size: 18px; font-weight: 600; margin-bottom: 16px; }
+        .field-group { margin-bottom: 20px; }
+        .label { display: block; font-weight: 500; margin-bottom: 8px; color: #374151; }
+        .input, .textarea, .select { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; }
+        .textarea { resize: vertical; min-height: 80px; }
+        .optional-section { border: 2px dashed #9ca3af; background: #f9fafb; }
+        .category-header { font-weight: 600; color: #6366f1; margin-bottom: 12px; font-size: 16px; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .help-text { font-size: 12px; color: #6b7280; margin-top: 4px; }
+        .ai-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .ai-section .section-title { color: white; }
+        .button { padding: 12px 24px; background: #4f46e5; color: white; border: none; border-radius: 6px; font-weight: 500; cursor: pointer; }
+        .core-required { border-left: 4px solid #ef4444; }
+        .optional-indicator { color: #6b7280; font-size: 12px; font-style: italic; }
+    </style>
+</head>
+<body>
+    <h1>Enhanced Story Form Structure</h1>
+    
+    <!-- Core Story Details -->
+    <div class="card core-required">
+        <div class="section-title">📝 Core Story Details</div>
+        
+        <div class="field-group">
+            <label class="label">You've named that tune! Now give us a name for the memory</label>
+            <input class="input" placeholder="Give your story a memorable title..." />
+        </div>
+
+        <div class="grid">
+            <div class="field-group">
+                <label class="label">How old were you? (approximate is fine)</label>
+                <select class="select">
+                    <option>Select age range...</option>
+                    <option>0-9 years old</option>
+                    <option>10-14 years old</option>
+                    <option>15-19 years old</option>
+                    <option>In my 20s</option>
+                    <option>In my 30s</option>
+                    <option>In my 40s</option>
+                    <option>50+ years old</option>
+                </select>
+            </div>
+            
+            <div class="field-group">
+                <label class="label">What was happening in your life at the time?</label>
+                <input class="input" placeholder="e.g., Starting college, going through a breakup..." />
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label class="label">Discovery Moment: When and how did you first encounter this song?</label>
+            <textarea class="textarea" placeholder="Describe how you discovered this song..."></textarea>
+        </div>
+
+        <div class="field-group">
+            <label class="label">Core Memory: Describe the most significant memory connected to this song</label>
+            <textarea class="textarea" placeholder="Tell us about the moment this song became meaningful (2-3 sentences minimum)..."></textarea>
+            <div class="help-text">Minimum 2-3 sentences</div>
+        </div>
+
+        <div class="field-group">
+            <label class="label">Emotional Connection: What feelings does this song evoke for you now?</label>
+            <textarea class="textarea" placeholder="Describe the emotions this song brings up..."></textarea>
+        </div>
+    </div>
+
+    <!-- Deep Dive Prompts -->
+    <div class="card optional-section">
+        <div class="section-title">🔍 Deep Dive Prompts <span class="optional-indicator">(Optional - Choose any that resonate)</span></div>
+        
+        <!-- Sensory & Setting -->
+        <div style="margin-bottom: 24px;">
+            <div class="category-header">🎬 Sensory & Setting</div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">The Scene</label>
+                    <textarea class="textarea" placeholder="Paint the picture - what did you see, smell, feel?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label class="label">Soundtrack Moment</label>
+                    <textarea class="textarea" placeholder="A specific moment when this song was playing that changed everything?"></textarea>
+                </div>
+            </div>
+            <div class="field-group">
+                <label class="label">Seasonal Connection</label>
+                <input class="input" placeholder="Do you associate this song with a particular season or weather?" />
+            </div>
+        </div>
+
+        <!-- Relationships & People -->
+        <div style="margin-bottom: 24px;">
+            <div class="category-header">👥 Relationships & People</div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">Shared Experience</label>
+                    <input class="input" placeholder="Who else was part of this song's story?" />
+                </div>
+                <div class="field-group">
+                    <label class="label">Musical Introduction</label>
+                    <input class="input" placeholder="Did someone special introduce you to this song?" />
+                </div>
+            </div>
+            <div class="field-group">
+                <label class="label">Generational Bridge</label>
+                <textarea class="textarea" placeholder="Does this song connect you to family, friends, or community?"></textarea>
+            </div>
+        </div>
+
+        <!-- Personal Growth & Change -->
+        <div style="margin-bottom: 24px;">
+            <div class="category-header">🌱 Personal Growth & Change</div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">Before & After</label>
+                    <textarea class="textarea" placeholder="How were you different before and after this song became important?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label class="label">Life Transition</label>
+                    <textarea class="textarea" placeholder="Was this song the soundtrack to a major change or milestone?"></textarea>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">Comfort & Healing</label>
+                    <textarea class="textarea" placeholder="Has this song helped you through difficult times?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label class="label">Identity Marker</label>
+                    <textarea class="textarea" placeholder="Does this song represent who you are or were becoming?"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Musical Elements -->
+        <div style="margin-bottom: 24px;">
+            <div class="category-header">🎵 Musical Elements</div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">The Hook</label>
+                    <input class="input" placeholder="What specific part captures you most?" />
+                </div>
+                <div class="field-group">
+                    <label class="label">Lyrical Resonance</label>
+                    <input class="input" placeholder="Particular lyrics that speak to you?" />
+                </div>
+            </div>
+            <div class="field-group">
+                <label class="label">Musical Discovery</label>
+                <textarea class="textarea" placeholder="Did this song introduce you to a new genre, artist, or era?"></textarea>
+            </div>
+        </div>
+
+        <!-- Broader Context -->
+        <div style="margin-bottom: 24px;">
+            <div class="category-header">🌍 Broader Context</div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">Cultural Moment</label>
+                    <textarea class="textarea" placeholder="Connect to a larger cultural moment you lived through?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label class="label">Unexpected Connection</label>
+                    <textarea class="textarea" placeholder="Something surprising about why this song matters?"></textarea>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">Legacy Impact</label>
+                    <textarea class="textarea" placeholder="How has your relationship with this song evolved?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label class="label">Sharing & Passing On</label>
+                    <textarea class="textarea" placeholder="Have you shared this song with others?"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reflection Prompts -->
+        <div>
+            <div class="category-header">💭 Reflection Prompts</div>
+            <div class="field-group">
+                <label class="label">Message to Past Self</label>
+                <textarea class="textarea" placeholder="What would you tell the person you were when this song first mattered?"></textarea>
+            </div>
+            <div class="grid">
+                <div class="field-group">
+                    <label class="label">Song as Compass</label>
+                    <textarea class="textarea" placeholder="What does this song teach you about what you value?"></textarea>
+                </div>
+                <div class="field-group">
+                    <label class="label">Future Connection</label>
+                    <textarea class="textarea" placeholder="Will this song still be meaningful in 10 years?"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Generation -->
+    <div class="card ai-section">
+        <div class="section-title">🤖 AI Story Generator</div>
+        <p style="margin-bottom: 16px; opacity: 0.9;">Transform your responses into a beautiful narrative using only the details you've provided</p>
+        
+        <div class="field-group">
+            <label class="label">Story Tone</label>
+            <div style="display: flex; gap: 16px; margin-top: 8px;">
+                <label style="display: flex; align-items: center; gap: 6px; color: white;">
+                    <input type="radio" name="tone" value="nostalgic" checked />
+                    Nostalgic
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; color: white;">
+                    <input type="radio" name="tone" value="emotional" />
+                    Emotional
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; color: white;">
+                    <input type="radio" name="tone" value="joyful" />
+                    Joyful
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; color: white;">
+                    <input type="radio" name="tone" value="reflective" />
+                    Reflective
+                </label>
+            </div>
+        </div>
+        
+        <button class="button" style="background: rgba(255,255,255,0.2); margin-top: 16px;">
+            ✨ Generate Story
+        </button>
+    </div>
+
+    <!-- Final Story -->
+    <div class="card">
+        <div class="section-title">📖 Your Story</div>
+        <div class="field-group">
+            <label class="label">Edit your story as needed</label>
+            <textarea class="textarea" style="min-height: 200px;" placeholder="Your generated story will appear here, or write your own..."></textarea>
+        </div>
+        
+        <div style="display: flex; gap: 12px; margin-top: 20px;">
+            <button class="button">💾 Save Draft</button>
+            <button class="button" style="background: #059669;">🚀 Publish Story</button>
+        </div>
+    </div>
+</body>
+</html>
